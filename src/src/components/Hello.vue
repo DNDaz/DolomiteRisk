@@ -22,16 +22,17 @@
 </template>
 
 <script>
-import firebase from 'firebase'
+import firebase from 'firebase';
+
 export default {
   name: 'hello',
   data () {
     return {
-      msg: 'Welcome to Dolomite Risk Management System'
+      msg: 'Welcome to The Dolomote Risk Management Web App'
     }
   },
   methods: {
-    logout: function () {
+    logout: function() {
       firebase.auth().signOut().then(() => {
         this.$router.replace('login')
       })
@@ -45,14 +46,17 @@ export default {
 h1, h2 {
   font-weight: normal;
 }
+
 ul {
   list-style-type: none;
   padding: 0;
 }
+
 li {
   display: inline-block;
   margin: 0 10px;
 }
+
 a {
   color: #42b983;
 }

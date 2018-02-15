@@ -1,4 +1,3 @@
-
 <template>
   <div class="login">
     <h3>Sign In</h3>
@@ -10,29 +9,29 @@
 </template>
 
 <script>
-import firebase from 'firebase'
-export default {
-  name: 'login',
-  data: function () {
-    return {
-      email: '',
-      password: ''
-    }
-  },
-  methods: {
-    signIn: function () {
-      firebase.auth().signInWithEmailAndPassword(this.email, this.password).then(
-        (user) => {
-          console.log('You have logged in')
-          this.$router.replace('hello')
-        },
-        (err) => {
-          alert('Oops. ' + err.message)
-        }
-      )
+  import firebase from 'firebase'
+
+  export default {
+    name: 'login',
+    data: function() {
+      return {
+        email: '',
+        password: ''
+      }
+    },
+    methods: {
+      signIn: function() {
+        firebase.auth().signInWithEmailAndPassword(this.email, this.password).then(
+          (user) => {
+            this.$router.replace('hello')
+          },
+          (err) => {
+            alert('Oops. ' + err.message)
+          }
+        );
+      }
     }
   }
-}
 </script>
 
 <style scoped>  /* "scoped" attribute limit the CSS to this component only */
